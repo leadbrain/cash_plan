@@ -23,7 +23,8 @@ defmodule CashPlan.Mixfile do
       extra_applications: [:logger,
                            :runtime_tools,
                            :ueberauth,
-                           :ueberauth_facebook]
+                           :ueberauth_facebook,
+                           :ueberauth_identity]
     ]
   end
 
@@ -45,6 +46,7 @@ defmodule CashPlan.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:ueberauth, "~>0.4"},
+      {:ueberauth_identity, "~> 0.2"},
       {:ueberauth_facebook, "~> 0.5"}
     ]
   end
