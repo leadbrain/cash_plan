@@ -19,6 +19,15 @@ defmodule CashPlanWeb.Router do
     get "/", PageController, :index
   end
 
+  scope "/auth", CashPlanWeb do
+    pipe_through :browser
+
+    get "/:provider", AuthController, :request
+    get "/:provider/callback", AuthController, :callback
+    post "/:provider/callback", AuthController, :callback
+    delete "/logout", AuthController, :delete
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", CashPlanWeb do
   #   pipe_through :api
